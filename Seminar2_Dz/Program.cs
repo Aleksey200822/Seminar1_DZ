@@ -14,4 +14,29 @@
         Console.Write("Ошибка");
     }
 }
-Task10();
+//Task10();
+
+void Task13()
+/* Задача 13: Напишите программу, которая с помощью
+деления выводит третью цифру заданного числа или
+сообщает, что третьей цифры нет.*/
+{
+    Random random = new Random();
+    int num = random.Next();
+    //Console.Write("Введите число: ");
+    //int num = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine(num);
+    if(num > 99)
+    {
+        while(num > 999)
+        {
+            num = num / 10;
+        }
+        Console.Write("Третье число: " + num % 10);
+    }
+    else
+    {
+        Console.WriteLine("Третьего числа нет");
+    }
+}
+//Task13();
