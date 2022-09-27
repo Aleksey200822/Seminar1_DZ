@@ -53,4 +53,19 @@ void Task21()
     Console.WriteLine("Расстояние: " + length);
     }
 }
-Task21();
+//Task21();
+
+void Task23()
+/* Задача 23: Напишите программу, которая принимает на
+вход число (N) и выдаёт таблицу кубов чисел от 1 до N.*/
+{
+    Console.Write ("Введите число: ");
+    int num = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Число\tКуб");
+    
+    for (int i = 1; i <= num; i++)
+    {
+        Console.WriteLine("{0}\t{1}\t", i, Math.Pow(i,3) );
+    }
+}
+Task23();
