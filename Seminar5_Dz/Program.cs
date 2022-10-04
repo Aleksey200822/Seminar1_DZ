@@ -9,7 +9,28 @@
     }
 }
 
+void FillArrayDouble(double[] num, int minValue = 0,
+                                   int maxValue = 10)
+{
+    maxValue++;
+    Random random = new Random();
+    for(int i = 0; i < num.Length; i++)
+    {
+        num[i] = Math.Round(random.NextDouble() * 30 - 15, 2);
+    }
+}
+
 void PrintArray(int[] num)
+{
+    Console.WriteLine("Вывод массива: ");
+    for(int i = 0; i < num.Length; i++)
+    {
+        Console.Write(num[i] + "  ");
+    }
+    Console.WriteLine();
+}
+
+void PrintArrayDouble(double[] num)
 {
     Console.WriteLine("Вывод массива: ");
     for(int i = 0; i < num.Length; i++)
@@ -69,4 +90,35 @@ void SumElementsNonEvenIndexes(int[] numbers)
     }
     Console.WriteLine("Сумма элементов с нечётными индексами: " + sum);
 }
-Task36();
+//Task36();
+
+void Task38()
+{
+    /*Задача 38: Задайте массив вещественных чисел. Найдите
+    разницу между максимальным и минимальным элементов
+    массива.*/
+    int size = 6;
+    double[] numbers = new double[size];
+    FillArrayDouble(numbers);
+    PrintArrayDouble(numbers);
+    MinMaxElementsArray(numbers);   
+}
+
+ void MinMaxElementsArray(double[] numbers)
+ {
+    double min = 0;
+    double max = 0;
+    for(int i = 0; i < numbers.Length; i++)
+    {
+        if(numbers[i] < min)
+        {
+            min = numbers[i];
+        }
+        if(numbers[i] > max)
+        {
+            max = numbers[i];
+        }
+    }
+    Console.WriteLine($"Максимальное: {max}  Минимальное: {min}  Разница: {max - min}");
+ }
+Task38();
