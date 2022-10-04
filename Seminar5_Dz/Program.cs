@@ -47,3 +47,26 @@ void EvenNumbersArray(int[] numbers)
     Console.WriteLine("Количество чётных чисел: " + count);
 }
 //Task34();
+
+void Task36()
+{
+    /*Задача 36: Задайте одномерный массив, заполненный
+    случайными числами. Найдите сумму элементов с
+    нечётными индексами.*/
+    int size = 6;
+    int[] numbers = new int[size];
+    FillArray(numbers, 1, 15);
+    PrintArray(numbers);
+    SumElementsNonEvenIndexes(numbers);
+}
+void SumElementsNonEvenIndexes(int[] numbers)
+{
+    int sum = 0;
+    int size = numbers.Length;
+    for(int i = 1; i < size; i += 2)
+    {
+        sum = sum + numbers[i];
+    }
+    Console.WriteLine("Сумма элементов с нечётными индексами: " + sum);
+}
+Task36();
