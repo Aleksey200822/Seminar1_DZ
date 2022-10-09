@@ -121,4 +121,25 @@ void Task38()
     }
     Console.WriteLine($"Максимальное: {max}  Минимальное: {min}  Разница: {max - min}");
  }
-Task38();
+//Task38();
+
+void Task41()
+{
+    /*Задача 41: Пользователь вводит с клавиатуры M чисел.
+    Посчитайте, сколько чисел больше 0 ввёл пользователь.*/
+
+    Console.Write("Введите количество чисел: ");
+    int countNumbers = Convert.ToInt32(Console.ReadLine());
+    int count = 0;
+    for(int i = 0; i < countNumbers; i++)
+    {
+        Console.WriteLine($"Введите {i +1} число: ");
+        int number = Convert.ToInt32(Console.ReadLine());
+        if(number > 0)
+        {
+            count++;
+        }
+    }
+    Console.WriteLine("Количество положительных чисел: " + count);
+}
+//Task41();
