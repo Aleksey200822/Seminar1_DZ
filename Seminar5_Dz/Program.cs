@@ -3,9 +3,9 @@
 {
     maxValue++;
     Random random = new Random();
-    for(int i = 0; i < num.Length; i++)
+    for (int i = 0; i < num.Length; i++)
     {
-        num[i] = random.Next(minValue,maxValue);
+        num[i] = random.Next(minValue, maxValue);
     }
 }
 
@@ -14,7 +14,7 @@ void FillArrayDouble(double[] num, int minValue = 0,
 {
     maxValue++;
     Random random = new Random();
-    for(int i = 0; i < num.Length; i++)
+    for (int i = 0; i < num.Length; i++)
     {
         num[i] = Math.Round(random.NextDouble() * 30 - 15, 2);
     }
@@ -23,7 +23,7 @@ void FillArrayDouble(double[] num, int minValue = 0,
 void PrintArray(int[] num)
 {
     Console.WriteLine("Вывод массива: ");
-    for(int i = 0; i < num.Length; i++)
+    for (int i = 0; i < num.Length; i++)
     {
         Console.Write(num[i] + "  ");
     }
@@ -33,7 +33,7 @@ void PrintArray(int[] num)
 void PrintArrayDouble(double[] num)
 {
     Console.WriteLine("Вывод массива: ");
-    for(int i = 0; i < num.Length; i++)
+    for (int i = 0; i < num.Length; i++)
     {
         Console.Write(num[i] + "  ");
     }
@@ -57,9 +57,9 @@ void EvenNumbersArray(int[] numbers)
 {
     Console.WriteLine("Чётные числа: ");
     int count = 0;
-    for(int i = 0; i < numbers.Length; i++)
+    for (int i = 0; i < numbers.Length; i++)
     {
-        if(numbers[i] % 2 == 0)
+        if (numbers[i] % 2 == 0)
         {
             count++;
             Console.Write(numbers[i] + "  ");
@@ -84,7 +84,7 @@ void SumElementsNonEvenIndexes(int[] numbers)
 {
     int sum = 0;
     int size = numbers.Length;
-    for(int i = 1; i < size; i += 2)
+    for (int i = 1; i < size; i += 2)
     {
         sum = sum + numbers[i];
     }
@@ -101,26 +101,26 @@ void Task38()
     double[] numbers = new double[size];
     FillArrayDouble(numbers);
     PrintArrayDouble(numbers);
-    MinMaxElementsArray(numbers);   
+    MinMaxElementsArray(numbers);
 }
 
- void MinMaxElementsArray(double[] numbers)
- {
+void MinMaxElementsArray(double[] numbers)
+{
     double min = 0;
     double max = 0;
-    for(int i = 0; i < numbers.Length; i++)
+    for (int i = 0; i < numbers.Length; i++)
     {
-        if(numbers[i] < min)
+        if (numbers[i] < min)
         {
             min = numbers[i];
         }
-        if(numbers[i] > max)
+        if (numbers[i] > max)
         {
             max = numbers[i];
         }
     }
     Console.WriteLine($"Максимальное: {max}  Минимальное: {min}  Разница: {max - min}");
- }
+}
 //Task38();
 
 void Task41()
@@ -131,11 +131,11 @@ void Task41()
     Console.Write("Введите количество чисел: ");
     int countNumbers = Convert.ToInt32(Console.ReadLine());
     int count = 0;
-    for(int i = 0; i < countNumbers; i++)
+    for (int i = 0; i < countNumbers; i++)
     {
-        Console.WriteLine($"Введите {i +1} число: ");
+        Console.WriteLine($"Введите {i + 1} число: ");
         int number = Convert.ToInt32(Console.ReadLine());
-        if(number > 0)
+        if (number > 0)
         {
             count++;
         }
@@ -143,3 +143,28 @@ void Task41()
     Console.WriteLine("Количество положительных чисел: " + count);
 }
 //Task41();
+
+void Task43()
+{
+    /*Задача 43. Напишите программу, которая найдёт точку
+    пересечения двух прямых, заданных уравнениями y = k1 *
+    x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2 задаются
+    пользователем.*/
+
+    Console.Write("Введите k1: ");
+    var k1 = Convert.ToDouble(Console.ReadLine());
+    Console.Write("Введите b1: ");
+    var b1 = Convert.ToDouble(Console.ReadLine());
+    Console.Write("Введите k2: ");
+    var k2 = Convert.ToDouble(Console.ReadLine());
+    Console.Write("Введите b2: ");
+    var b2 = Convert.ToDouble(Console.ReadLine());
+
+    var x = -(b1 - b2) / (k1 - k2);
+    var y = k1 * x + b1;
+
+    x = Math.Round(x, 3);
+    y = Math.Round(y, 3);
+    Console.WriteLine($"Пересечение в точке: ({x};{y})");
+}
+//Task43();
